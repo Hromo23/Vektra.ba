@@ -1,0 +1,641 @@
+<!doctype html>
+<html lang="bs">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Web stranice za lokalne biznise u Bosni i Hercegovini. Imran Oprasic i Tarik Hromo.">
+<style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<title>Web Studio Professional</title>
+<script>
+  window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+</script>
+<script defer src="/_vercel/insights/script.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@112,600;112,700&family=Public+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap">
+<style>
+:root {
+  --bg: #F2F3F1;
+  --surface: #FBFBFA;
+  --tint: #E4EAEC;
+  --ink: #16191B;
+  --muted: #5B6166;
+  --line: #D5D8D4;
+  --accent: #2F4B57;
+  --accent-ink: #FBFBFA;
+  --video-fallback: #E4E9EE;
+  --veil: .22;
+  --glass: rgb(255 255 255 / .36);
+  --glass-edge: rgb(255 255 255 / .75);
+  --glass-shine: rgb(255 255 255 / .5);
+  --glass-shadow: rgb(20 32 40 / .2);
+  --display: "Archivo", "Helvetica Neue", Arial, sans-serif;
+  --body: "Public Sans", "Segoe UI", system-ui, sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, Consolas, monospace;
+  --ease: cubic-bezier(.2, .8, .2, 1);
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #141618; --surface: #1B1E21; --tint: #1C2428; --ink: #E8EAE7; --muted: #A0A6AA; --line: #2E3337; --accent: #9DB8C4; --accent-ink: #141618; --video-fallback: #1F272C; --veil: .74; --glass: rgb(28 32 36 / .38); --glass-edge: rgb(255 255 255 / .16); --glass-shine: rgb(255 255 255 / .09); --glass-shadow: rgb(0 0 0 / .55); color-scheme: dark;
+} }
+:root[data-theme="dark"] {
+  --bg: #141618; --surface: #1B1E21; --tint: #1C2428; --ink: #E8EAE7; --muted: #A0A6AA; --line: #2E3337; --accent: #9DB8C4; --accent-ink: #141618; --video-fallback: #1F272C; --veil: .74; --glass: rgb(28 32 36 / .38); --glass-edge: rgb(255 255 255 / .16); --glass-shine: rgb(255 255 255 / .09); --glass-shadow: rgb(0 0 0 / .55); color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body { background: var(--bg); color: var(--ink); font-family: var(--body); font-size: 17px; line-height: 1.65; }
+.wrap { max-width: 1160px; margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+h1, h2, h3 { font-family: var(--display); font-stretch: 112%; font-weight: 700; line-height: 1.08; letter-spacing: -0.01em; margin: 0; text-wrap: balance; }
+h2 { font-size: clamp(1.9rem, 3.6vw, 2.6rem); max-width: 22ch; }
+h3 { font-size: 1.2rem; font-weight: 600; }
+p { margin: 0; max-width: 64ch; }
+a { color: inherit; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+.label { font-family: var(--mono); font-size: .76rem; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
+.muted { color: var(--muted); }
+.brand { display: inline-block; min-width: 8em; border-bottom: 2px solid currentColor; line-height: 1.1; }
+.brand:empty::before { content: "\00a0"; }
+header.top { border-bottom: 1px solid var(--line); background: color-mix(in srgb, var(--bg) 88%, transparent); backdrop-filter: blur(8px); position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5; }
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 10; background: var(--bg); }
+header.top .wrap { display: flex; align-items: center; justify-content: space-between; gap: 24px; padding-block: 14px; flex-wrap: wrap; }
+.logo { font-family: var(--display); font-stretch: 112%; font-weight: 700; font-size: 1.15rem; display: flex; gap: 10px; align-items: center; }
+.logo .mark { width: 22px; height: 22px; border: 2px solid var(--ink); position: relative; transition: transform .5s var(--ease); }
+.logo .mark::after { content: ""; position: absolute; inset: 4px 4px auto auto; width: 6px; height: 6px; background: var(--accent); }
+.logo:hover .mark { transform: rotate(90deg); }
+nav.links { display: flex; gap: 22px; flex-wrap: wrap; font-size: .95rem; }
+nav.links a { text-decoration: none; color: var(--muted); background: linear-gradient(var(--accent), var(--accent)) left bottom / 0 1px no-repeat; transition: background-size .3s var(--ease), color .2s; }
+nav.links a:hover { color: var(--ink); background-size: 100% 1px; }
+.btn { display: inline-flex; align-items: center; gap: 10px; font: 600 .95rem var(--body); text-decoration: none; padding: 12px 22px; border: 1px solid var(--accent); background: var(--accent); color: var(--accent-ink); transition: background .2s, color .2s; }
+.btn::after { content: "→"; transition: transform .25s var(--ease); }
+.btn:hover { background: transparent; color: var(--accent); }
+.btn:hover::after { transform: translateX(4px); }
+.btn.ghost { background: transparent; color: var(--ink); border-color: var(--line); }
+.btn.ghost:hover { border-color: var(--ink); }
+.hero { padding-block: 80px 64px; border-bottom: 1px solid var(--line); position: relative; overflow: hidden; }
+.hero::before { content: ""; position: absolute; inset: 0; background-image: linear-gradient(var(--line) 1px, transparent 1px), linear-gradient(90deg, var(--line) 1px, transparent 1px); background-size: 48px 48px; mask-image: radial-gradient(ellipse at 85% 30%, #000 0%, transparent 60%); opacity: .7; pointer-events: none; }
+.hero .wrap { display: grid; grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr); gap: 56px; align-items: end; position: relative; z-index: 1; }
+.hero h1 { font-size: clamp(2.5rem, 6vw, 4.6rem); margin: 14px 0 24px; }
+.rotor { display: inline-grid; color: var(--accent); }
+.rotor span { grid-area: 1 / 1; transition: opacity .45s var(--ease), transform .45s var(--ease); }
+.rotor span:not(.on) { opacity: 0; transform: translateY(.35em); }
+.rotor span.out { opacity: 0; transform: translateY(-.35em); }
+.hero p { font-size: 1.15rem; color: var(--muted); max-width: 50ch; }
+.ctas { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 32px; }
+.facts { margin: 0; padding-block: 12px; box-shadow: 0 30px 60px -34px rgb(0 0 0 / .4); }
+.facts div { display: flex; justify-content: space-between; gap: 16px; padding-block: 14px; border-bottom: 1px solid var(--line); }
+.facts div:last-child { border-bottom: 0; }
+.facts dt { color: var(--muted); }
+.facts dd { margin: 0; font-weight: 600; text-align: right; }
+.live { display: inline-flex; align-items: center; gap: 8px; }
+.live::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: #2E9D6A; box-shadow: 0 0 0 0 #2E9D6A; animation: pulse 2s infinite; }
+@keyframes pulse { 70% { box-shadow: 0 0 0 8px transparent; } 100% { box-shadow: 0 0 0 0 transparent; } }
+section { padding-block: 72px; border-bottom: 1px solid var(--line); }
+.split { display: grid; gap: 10px; }
+.split > * { min-width: 0; }
+.intro { display: grid; gap: 14px; margin-bottom: 32px; }
+.box { background: var(--surface); border: 1px solid var(--line); padding: 26px; position: relative; transition: transform .35s var(--ease), box-shadow .35s var(--ease), border-color .35s; }
+.box::before { content: ""; position: absolute; left: -1px; right: -1px; top: -1px; height: 3px; background: var(--accent); transform: scaleX(0); transform-origin: left; transition: transform .4s var(--ease); }
+.box:hover { transform: translateY(-4px); box-shadow: 0 22px 40px -26px rgb(0 0 0 / .45); border-color: color-mix(in srgb, var(--accent) 40%, var(--line)); }
+.box:hover::before { transform: scaleX(1); }
+.strip { border-bottom: 1px solid var(--line); overflow: hidden; padding-block: 16px; background: transparent; }
+.strip-track { display: flex; width: max-content; animation: slide 40s linear infinite; }
+.strip-track span { margin-right: 12px; padding: 8px 16px; border: 1px solid var(--line); background: var(--bg); font-weight: 500; white-space: nowrap; display: inline-flex; gap: 10px; align-items: center; }
+.strip-track span::before { content: ""; width: 6px; height: 6px; background: var(--accent); }
+@keyframes slide { to { transform: translateX(-50%); } }
+.rows { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
+.row { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 6px 18px; align-items: start; }
+.row .ic { grid-row: span 2; width: 48px; height: 48px; display: grid; place-items: center; background: var(--tint); color: var(--accent); transition: background .3s, color .3s, transform .4s var(--ease); }
+.row:hover .ic { background: var(--accent); color: var(--accent-ink); transform: rotate(-8deg); }
+.row .ic svg { width: 24px; height: 24px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.row p { color: var(--muted); }
+.track { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 18px; counter-reset: step; }
+.track li { counter-increment: step; display: grid; gap: 6px; align-content: start; }
+.track li > * { position: relative; z-index: 1; }
+.track li::after { content: counter(step); position: absolute; right: 18px; top: 12px; font-family: var(--display); font-stretch: 112%; font-size: 3.2rem; font-weight: 700; line-height: 1; color: var(--tint); transition: color .3s; }
+.track li:hover::after { color: color-mix(in srgb, var(--accent) 40%, var(--tint)); }
+.track li::before { animation: steps 6s var(--ease) infinite; }
+.track li:nth-child(2)::before { animation-delay: .7s; }
+.track li:nth-child(3)::before { animation-delay: 1.4s; }
+.track li:nth-child(4)::before { animation-delay: 2.1s; }
+@keyframes steps { 0% { transform: scaleX(0); } 15%, 85% { transform: scaleX(1); } 100% { transform: scaleX(0); } }
+.track p { color: var(--muted); font-size: .95rem; }
+.table-wrap { overflow-x: auto; padding-block: 10px; }
+.table-wrap:hover { transform: none; }
+table { width: 100%; border-collapse: collapse; min-width: 520px; font-variant-numeric: tabular-nums; }
+th, td { text-align: left; padding: 14px 16px 14px 0; border-bottom: 1px solid var(--line); vertical-align: top; }
+thead th { font-family: var(--display); font-stretch: 112%; font-size: 1.05rem; }
+thead th.pick { color: var(--accent); }
+thead th.pick small { display: block; font: 500 .7rem var(--mono); letter-spacing: .1em; text-transform: uppercase; }
+tbody th { font-weight: 500; color: var(--muted); }
+tbody tr { transition: background .2s; }
+tbody tr:hover { background: var(--tint); }
+td.yes::before { content: "✓"; color: var(--accent); font-weight: 700; }
+td.no::before { content: "—"; color: var(--muted); }
+.price td { font-weight: 600; }
+.fill { display: inline-block; min-width: 5em; border-bottom: 1px dashed var(--muted); }
+.fill:empty::before { content: "\00a0"; }
+.contact { background: var(--ink); color: var(--bg); border-bottom: 0; }
+.contact .label { color: color-mix(in srgb, var(--bg) 65%, var(--ink)); }
+.contact h2 { margin-bottom: 16px; }
+.contact p { color: color-mix(in srgb, var(--bg) 78%, var(--ink)); }
+.duo { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 18px; margin-top: 36px; }
+.people { display: grid; gap: 18px; align-content: start; }
+.contact .box { background: color-mix(in srgb, var(--bg) 7%, var(--ink)); border-color: color-mix(in srgb, var(--bg) 22%, var(--ink)); }
+.contact .box::before { background: var(--tint); }
+.person { display: flex; gap: 16px; align-items: center; }
+.initials { flex: none; width: 56px; height: 56px; display: grid; place-items: center; border: 1px solid currentColor; font-family: var(--display); font-stretch: 112%; font-weight: 700; transition: background .25s, color .25s; }
+.person:hover .initials { background: var(--bg); color: var(--ink); }
+.person h3 { font-size: 1.2rem; }
+.lines { margin: 0; padding-block: 10px; }
+.lines div { display: grid; grid-template-columns: 120px minmax(0, 1fr); gap: 16px; padding-block: 14px; border-bottom: 1px solid color-mix(in srgb, var(--bg) 22%, var(--ink)); }
+.lines div:last-child { border-bottom: 0; }
+.lines dt { font-family: var(--mono); font-size: .78rem; letter-spacing: .1em; text-transform: uppercase; color: color-mix(in srgb, var(--bg) 65%, var(--ink)); }
+.lines dd { margin: 0; min-height: 1.5em; }
+footer { padding-block: 26px; font-size: .9rem; color: var(--muted); }
+footer .wrap { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+.scrubbg { position: fixed; inset: 0; z-index: -1; pointer-events: none; overflow: hidden; background: var(--video-fallback); }
+.scrubbg > * { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: opacity .5s ease; }
+.scrubbg__video { opacity: 0; will-change: transform; }
+.scrubbg.has-video .scrubbg__video { opacity: 1; }
+.scrubbg__veil { background: var(--bg); opacity: var(--veil); }
+.progress { position: absolute; left: 0; bottom: -1px; width: 100%; height: 2px; background: var(--accent); transform-origin: left; transform: scaleX(0); }
+.box { background: radial-gradient(360px circle at var(--mx, -999px) var(--my, -999px), color-mix(in srgb, var(--accent) 12%, transparent), transparent 70%), var(--surface); }
+.box, header.top, .strip-track span, .btn.ghost { background-color: var(--glass); border-color: var(--glass-edge); }
+.box, header.top { -webkit-backdrop-filter: blur(14px) saturate(160%); backdrop-filter: blur(14px) saturate(160%); }
+.box {
+  background: radial-gradient(360px circle at var(--mx, -999px) var(--my, -999px), var(--glass-shine), transparent 70%), linear-gradient(135deg, var(--glass-shine), transparent 45%), var(--glass);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: inset 0 1px 0 var(--glass-edge), inset 0 -1px 0 color-mix(in srgb, var(--glass-edge) 35%, transparent), 0 18px 40px -24px var(--glass-shadow);
+}
+.box:hover { box-shadow: inset 0 1px 0 var(--glass-edge), inset 0 -1px 0 color-mix(in srgb, var(--glass-edge) 35%, transparent), 0 28px 54px -24px var(--glass-shadow); }
+.box::before { inset: 0 0 auto 0; }
+.table-wrap { overflow-x: auto; }
+.btn, .strip-track span { border-radius: 999px; }
+.row .ic { border-radius: 12px; }
+.initials { border-radius: 14px; }
+.contact { background: color-mix(in srgb, var(--ink) 88%, transparent); }
+.contact .box { background: linear-gradient(135deg, rgb(255 255 255 / .14), transparent 45%), color-mix(in srgb, var(--bg) 8%, transparent); border-color: color-mix(in srgb, var(--bg) 25%, transparent); box-shadow: inset 0 1px 0 color-mix(in srgb, var(--bg) 30%, transparent); }
+@keyframes rise { from { transform: translateY(24px); filter: blur(3px); } }
+.hero .wrap > div > *, .hero .facts { animation: rise .9s var(--ease) backwards; }
+.hero .wrap > div > :nth-child(2) { animation-delay: .12s; }
+.hero .wrap > div > :nth-child(3) { animation-delay: .24s; }
+.hero .wrap > div > :nth-child(4) { animation-delay: .36s; }
+.hero .facts { animation-delay: .48s; }
+.js h2.seen { animation: rise .9s var(--ease) backwards; }
+.box:active, .btn:active { transform: scale(.97); }
+.js .box:not(.seen) { transform: translateY(18px); }
+.box.seen { transition: transform .7s var(--ease), box-shadow .35s var(--ease), border-color .35s; }
+@media (hover: none) {
+  .box.seen::before { transform: scaleX(1); }
+  .row.seen .ic { background: var(--accent); color: var(--accent-ink); transition-delay: .3s; }
+}
+@media (max-width: 860px) {
+  .hero .wrap, .duo { grid-template-columns: minmax(0, 1fr); }
+  .hero { padding-block: 48px 40px; }
+  .hero .wrap { gap: 32px; }
+  .rows { grid-template-columns: minmax(0, 1fr); }
+  .track { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+  nav.links { display: none; }
+  section { padding-block: 56px; }
+}
+@media (max-width: 560px) {
+  body { font-size: 16px; }
+  section { padding-block: 44px; }
+  .box { padding: 20px; }
+  .intro { margin-bottom: 22px; }
+  .hero h1 { font-size: 2.3rem; }
+  .hero p { font-size: 1.05rem; }
+  .ctas .btn { flex: 1 1 100%; justify-content: center; }
+  header.top .wrap { gap: 12px; }
+  header.top .btn { padding: 9px 14px; font-size: .88rem; }
+  .brand { min-width: 5em; }
+  .track { grid-template-columns: minmax(0, 1fr); gap: 12px; }
+  table { min-width: 0; font-size: .88rem; }
+  th, td { padding: 10px 8px 10px 0; }
+  .strip { padding-block: 12px; }
+}
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; transition: none !important; } }
+.nav-end { display: flex; align-items: center; gap: 12px; }
+.lang { display: inline-flex; gap: 2px; padding: 3px; border: 1px solid var(--glass-edge); border-radius: 999px; background: var(--glass); }
+.lang button { font: 600 .78rem var(--mono); letter-spacing: .08em; border: 0; background: transparent; color: var(--muted); padding: 6px 11px; border-radius: 999px; cursor: pointer; transition: background .2s, color .2s; }
+.lang button:hover { color: var(--ink); }
+.lang button[aria-pressed=true] { background: var(--accent); color: var(--accent-ink); }
+@media (max-width: 560px) { .nav-end { gap: 8px; } .lang button { padding: 6px 9px; } }
+.tpls { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
+.tpl { padding: 10px; display: grid; gap: 10px; align-content: start; }
+.tpl.box { -webkit-backdrop-filter: none; backdrop-filter: none; }
+.tpl-shot { position: relative; isolation: isolate; min-height: 420px; padding: 16px; border-radius: 16px; overflow: hidden; display: flex; flex-direction: column; justify-content: space-between; gap: 16px; background: var(--m-accent); color: #fff; }
+.tpl-shot > img { position: absolute; inset: 0; z-index: -2; width: 100%; height: 100%; object-fit: cover; object-position: 72% center; transition: transform .8s var(--ease); }
+.tpl-shot::after { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(90deg, rgb(10 14 18 / .38), rgb(10 14 18 / .04) 62%), linear-gradient(180deg, transparent 55%, rgb(10 14 18 / .3)); }
+.tpl:hover .tpl-shot > img { transform: scale(1.04); }
+.tpl-nav, .tpl-glass {
+  background: linear-gradient(135deg, rgb(255 255 255 / .26), rgb(255 255 255 / .06) 55%), rgb(16 22 28 / .3);
+  -webkit-backdrop-filter: blur(18px) saturate(170%);
+  backdrop-filter: blur(18px) saturate(170%);
+  border: 1px solid rgb(255 255 255 / .36);
+  box-shadow: inset 0 1px 0 rgb(255 255 255 / .55), inset 0 -1px 0 rgb(255 255 255 / .1), 0 18px 40px -22px rgb(0 0 0 / .6);
+}
+.tpl-nav { align-self: flex-start; display: flex; align-items: center; gap: 12px; padding: 7px 13px; border-radius: 999px; font-size: .7rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; }
+.tpl-nav i { display: flex; gap: 5px; }
+.tpl-nav i::before, .tpl-nav i::after { content: ""; width: 16px; height: 2px; background: currentColor; opacity: .7; }
+.tpl-glass { max-width: 330px; padding: 18px; border-radius: 18px; display: grid; gap: 10px; justify-items: start; text-shadow: 0 1px 2px rgb(0 0 0 / .25); }
+.tpl-head { font-family: var(--display); font-stretch: 112%; font-weight: 700; font-size: clamp(1.25rem, 2.1vw, 1.55rem); line-height: 1.12; color: #fff; text-wrap: balance; }
+.tpl-text { color: rgb(255 255 255 / .9); font-size: .88rem; }
+.tpl-btn { background: #fff; color: var(--m-accent); font-size: .8rem; font-weight: 700; padding: 8px 15px; border-radius: var(--m-r); text-shadow: none; }
+.tpl-facts { width: 100%; display: flex; flex-wrap: wrap; gap: 2px 14px; padding-top: 10px; border-top: 1px solid rgb(255 255 255 / .25); font-size: .76rem; color: rgb(255 255 255 / .86); }
+.tpl-facts b { color: #fff; font-weight: 600; }
+.tpl-name { display: flex; justify-content: space-between; align-items: center; gap: 8px; font-weight: 600; padding: 4px; text-decoration: none; }
+.tpl-name span:last-child { color: var(--accent); transition: transform .25s var(--ease); }
+.tpl-name:hover span:last-child { transform: translateX(4px); }
+@media (max-width: 760px) { .tpls { grid-template-columns: minmax(0, 1fr); } .tpl-shot { min-height: 400px; } .tpl-glass { max-width: none; } }
+@media (max-width: 560px) {
+  header.top .wrap { flex-wrap: nowrap; gap: 10px; }
+  header.top .btn::after { display: none; }
+  .brand { min-width: 3.5em; }
+  .lang button { padding: 9px 12px; }
+  .table-wrap { padding: 8px 12px; }
+  table { font-size: .8rem; }
+  th, td { padding: 9px 6px 9px 0; }
+  thead th { font-size: .9rem; }
+  thead th.pick small { letter-spacing: .04em; }
+  thead th:first-child .label { font-size: .66rem; letter-spacing: .06em; }
+}
+@media (max-width: 380px) {
+  header.top .btn { padding: 8px 11px; font-size: .8rem; white-space: nowrap; }
+  .lang button { padding: 8px 9px; }
+  table { font-size: .74rem; }
+  th, td { padding: 9px 4px 9px 0; }
+  thead th { font-size: .8rem; }
+  thead th.pick small { display: none; }
+  thead th:first-child .label { visibility: hidden; }
+}
+section { scroll-margin-top: 72px; }
+.modal { width: min(720px, calc(100% - 32px)); max-height: calc(100dvh - 32px); overflow: auto; margin: auto; padding: 32px; border: 1px solid color-mix(in srgb, var(--bg) 25%, transparent); border-radius: 24px; box-shadow: 0 40px 80px -30px rgb(0 0 0 / .6); }
+.modal::backdrop { background: rgb(12 16 20 / .35); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); }
+.modal[open] { animation: modal-in .35s var(--ease); }
+@keyframes modal-in { from { opacity: 0; transform: translateY(16px) scale(.98); } }
+.modal h2 { margin: 8px 0 12px; padding-right: 40px; }
+.modal .duo { margin-top: 24px; }
+.modal-close { position: absolute; top: 14px; right: 14px; width: 40px; height: 40px; border-radius: 50%; border: 1px solid color-mix(in srgb, var(--bg) 30%, transparent); background: transparent; color: inherit; font-size: 1.4rem; line-height: 1; cursor: pointer; }
+.modal-close:hover { background: color-mix(in srgb, var(--bg) 12%, transparent); }
+body:has(.modal[open]) { overflow: hidden; }
+@media (max-width: 560px) { .modal { padding: 24px 18px; } }
+.facts dt { white-space: nowrap; }
+</style>
+</head>
+<body>
+
+<div class="scrubbg" aria-hidden="true">
+  <video class="scrubbg__video" src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260505_101331_74f9b798-3f00-4e86-8a01-377aa16ffeaa.mp4" muted loop playsinline preload="auto"></video>
+  <div class="scrubbg__veil"></div>
+</div>
+
+<header class="top">
+  <div class="wrap">
+    <div class="logo"><span class="mark" aria-hidden="true"></span><span class="brand"></span></div>
+    <nav class="links" aria-label="Main">
+      <a href="#services" data-i18n="nav.services">Usluge</a><a href="#process" data-i18n="nav.process">Proces</a><a href="#templates" data-i18n="nav.templates">Šabloni</a><a href="#packages" data-i18n="nav.packages">Paketi</a><a href="#contact" data-i18n="nav.contact">Kontakt</a>
+    </nav>
+    <div class="nav-end">
+      <div class="lang" role="group" aria-label="Jezik / Language">
+        <button type="button" id="lang-bs" data-lang="bs" aria-pressed="true">BS</button>
+        <button type="button" id="lang-en" data-lang="en" aria-pressed="false">EN</button>
+      </div>
+      <a class="btn" href="#contact" data-i18n="nav.cta">Zakažite poziv</a>
+    </div>
+  </div>
+  <div class="progress" id="progress" aria-hidden="true"></div>
+</header>
+
+<main>
+  <div class="hero">
+    <div class="wrap">
+      <div>
+        <span class="label live" data-i18n="hero.label">Primamo nove klijente</span>
+        <h1 data-i18n-aria="hero.aria" aria-label="Web stranica za vaš biznis."><span data-i18n="hero.lead">Web stranica za</span> <span class="rotor" id="rotor" aria-hidden="true"><span class="on" data-i18n="rotor.1">vašu pekaru.</span><span data-i18n="rotor.2">vašu kliniku.</span><span data-i18n="rotor.3">vaš salon.</span><span data-i18n="rotor.4">vašu radionicu.</span><span data-i18n="rotor.5">vaš restoran.</span></span></h1>
+        <p data-i18n="hero.text">Većina kupaca vas prvo potraži na internetu. Pravimo jasne i brze web stranice za lokalne biznise, da vas pronađu, da vam vjeruju i da vas kontaktiraju.</p>
+        <div class="ctas">
+          <a class="btn" href="#contact" data-i18n="hero.cta">Zakažite besplatan poziv</a>
+          <a class="btn ghost" href="#templates" data-i18n="hero.cta2">Pogledajte šablone</a>
+        </div>
+      </div>
+      <dl class="facts box">
+        <div><dt data-i18n="facts.t1">Uobičajeno trajanje</dt><dd data-i18n="facts.d1">2 do 3 sedmice</dd></div>
+        <div><dt data-i18n="facts.t2">Radi na</dt><dd data-i18n="facts.d2">Telefonu, tabletu, računaru</dd></div>
+        <div><dt data-i18n="facts.t3">Vama treba</dt><dd data-i18n="facts.d3">Fotografije i kratak razgovor</dd></div>
+        <div><dt data-i18n="facts.t4">Nakon pokretanja</dt><dd data-i18n="facts.d4">Ažuriranja i podrška</dd></div>
+      </dl>
+    </div>
+  </div>
+
+  <div class="strip" aria-hidden="true">
+    <div class="strip-track" id="strip"></div>
+  </div>
+
+  <section id="services">
+    <div class="wrap split">
+      <span class="label" data-i18n="nav.services">Usluge</span>
+      <div>
+        <div class="intro"><h2 data-i18n="services.title">Sve što vam treba da vas pronađu na internetu.</h2></div>
+        <div class="rows">
+          <div class="row box"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 19l7-7-3-3-7 7v3h3z"/><path d="M16 9l-2-2"/><path d="M3 21h18"/></svg></span><h3 data-i18n="s1.t">Dizajn po mjeri</h3><p data-i18n="s1.d">Napravljen prema vašem brendu, bojama i fotografijama. Bez generičkih šablona.</p></div>
+          <div class="row box"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="6" y="2" width="12" height="20" rx="2"/><path d="M11 18h2"/></svg></span><h3 data-i18n="s2.t">Prilagođeno mobitelima</h3><p data-i18n="s2.d">Brze stranice koje se lijepo čitaju na svakom ekranu, testirane na pravim telefonima.</p></div>
+          <div class="row box"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></span><h3 data-i18n="s3.t">Google i Mape</h3><p data-i18n="s3.d">Osnove pretrage i Google Business profil, da vas ljudi u blizini pronađu prvi.</p></div>
+          <div class="row box"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg></span><h3 data-i18n="s4.t">Domena i ažuriranja</h3><p data-i18n="s4.d">Vaša vlastita web adresa, hosting i izmjene kad god vam se promijene cijene ili radno vrijeme.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="process">
+    <div class="wrap split">
+      <span class="label" data-i18n="nav.process">Proces</span>
+      <div>
+        <div class="intro"><h2 data-i18n="process.title">Od prvog poziva do pokretanja.</h2></div>
+        <ol class="track">
+          <li class="box"><span class="label" data-i18n="p1.when">Dan 1</span><h3 data-i18n="p1.t">Besplatan poziv</h3><p data-i18n="p1.d">Upoznamo vaš biznis i pošaljemo jasnu ponudu.</p></li>
+          <li class="box"><span class="label" data-i18n="p2.when">Sedmica 1</span><h3 data-i18n="p2.t">Dizajn</h3><p data-i18n="p2.d">Pošaljete fotografije i podatke. Mi dizajniramo prvu verziju.</p></li>
+          <li class="box"><span class="label" data-i18n="p3.when">Sedmica 2</span><h3 data-i18n="p3.t">Pregled</h3><p data-i18n="p3.d">Isprobate je na svom telefonu. Mi promijenimo šta god želite.</p></li>
+          <li class="box"><span class="label" data-i18n="p4.when">Sedmica 3</span><h3 data-i18n="p4.t">Pokretanje</h3><p data-i18n="p4.d">Vaša stranica ide uživo na vašoj domeni, povezana s Googleom.</p></li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <section id="templates">
+    <div class="wrap split">
+      <span class="label" data-i18n="nav.templates">Šabloni</span>
+      <div>
+        <div class="intro"><h2 data-i18n="templates.title">Šablon za svaku djelatnost.</h2><p class="muted" data-i18n="templates.text">Svaki biznis dobije vlastiti izgled, fotografije i tekst, napravljen baš za njegov posao.</p></div>
+        <div class="tpls" id="tpls"></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="packages">
+    <div class="wrap split">
+      <span class="label" data-i18n="nav.packages">Paketi</span>
+      <div>
+        <div class="intro"><h2 data-i18n="packages.title">Jednostavni paketi, bez iznenađenja.</h2></div>
+        <div class="table-wrap box">
+          <table>
+            <thead><tr><th scope="col"><span class="label" data-i18n="pk.includes">Uključuje</span></th><th scope="col" data-i18n="pk.starter">Početni</th><th scope="col" class="pick"><span data-i18n="pk.business">Biznis</span><small data-i18n="pk.popular">Najpopularniji</small></th><th scope="col" data-i18n="pk.custom">Po mjeri</th></tr></thead>
+            <tbody>
+              <tr><th scope="row" data-i18n="pk.pages">Stranice</th><td data-i18n="pk.pages1">1 stranica</td><td data-i18n="pk.pages2">Do 5</td><td data-i18n="pk.pages3">Po potrebi</td></tr>
+              <tr><th scope="row" data-i18n="pk.base">Dizajn, mobilna verzija i Google</th><td class="yes"></td><td class="yes"></td><td class="yes"></td></tr>
+              <tr><th scope="row" data-i18n="pk.form">Kontakt forma</th><td class="no"></td><td class="yes"></td><td class="yes"></td></tr>
+              <tr><th scope="row" data-i18n="pk.booking">Online rezervacije</th><td class="no"></td><td class="no"></td><td class="yes"></td></tr>
+              <tr class="price"><th scope="row" data-i18n="pk.price">Cijena</th><td><span class="fill"></span></td><td><span class="fill"></span></td><td><span class="fill"></span></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <dialog class="contact modal" id="contact" aria-labelledby="contact-title">
+    <button type="button" class="modal-close" data-i18n-aria="contact.close" aria-label="Zatvori">×</button>
+    <span class="label" data-i18n="nav.contact">Kontakt</span>
+    <h2 id="contact-title" data-i18n="contact.title">Razgovarajmo o vašoj web stranici.</h2>
+    <p data-i18n="contact.text">Zakažite besplatan poziv bez obaveza. Razgovarate direktno s dvojicom ljudi koji prave vašu stranicu.</p>
+        <div class="duo">
+          <div class="people">
+            <div class="person box"><div class="initials" aria-hidden="true">IO</div><div><span class="label" data-i18n="contact.role">Suosnivač</span><h3>Imran Oprasic</h3></div></div>
+            <div class="person box"><div class="initials" aria-hidden="true">TH</div><div><span class="label" data-i18n="contact.role">Suosnivač</span><h3>Tarik Hromo</h3></div></div>
+          </div>
+          <dl class="lines box">
+            <div><dt data-i18n="contact.email">E-mail</dt><dd></dd></div>
+            <div><dt data-i18n="contact.phone">Telefon</dt><dd></dd></div>
+            <div><dt>Instagram</dt><dd></dd></div>
+          </dl>
+        </div>
+  </dialog>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 <span class="brand"></span></span>
+    <span>Imran Oprasic &amp; Tarik Hromo</span>
+  </div>
+</footer>
+
+<script>
+const EN = {
+  "nav.services": "Services", "nav.process": "Process", "nav.templates": "Templates", "nav.packages": "Packages", "nav.contact": "Contact", "nav.cta": "Book a call",
+  "hero.label": "Now taking new clients", "hero.aria": "A website for your business.", "hero.lead": "A website for your",
+  "rotor.1": "bakery.", "rotor.2": "clinic.", "rotor.3": "salon.", "rotor.4": "garage.", "rotor.5": "restaurant.",
+  "hero.text": "Most customers look you up before they walk in. We build clear, fast websites for local businesses so they find you, trust you and get in touch.",
+  "hero.cta": "Book a free call", "hero.cta2": "See templates",
+  "facts.t1": "Typical timeline", "facts.d1": "2 to 3 weeks", "facts.t2": "Works on", "facts.d2": "Phone, tablet, desktop",
+  "facts.t3": "You need", "facts.d3": "Photos and a short chat", "facts.t4": "After launch", "facts.d4": "Updates and support",
+  "services.title": "Everything you need to be found online.",
+  "s1.t": "Custom design", "s1.d": "Built around your brand, colors and photos. No generic templates.",
+  "s2.t": "Mobile-ready", "s2.d": "Fast pages that read well on any screen, tested on real phones.",
+  "s3.t": "Google and Maps", "s3.d": "Search basics and a Google Business Profile, so nearby customers find you first.",
+  "s4.t": "Domain and updates", "s4.d": "Your own web address, hosting, and changes whenever your prices or hours change.",
+  "process.title": "From first call to launch.",
+  "p1.when": "Day 1", "p1.t": "Free call", "p1.d": "We learn about your business and send a clear quote.",
+  "p2.when": "Week 1", "p2.t": "Design", "p2.d": "You send photos and details. We design the first version.",
+  "p3.when": "Week 2", "p3.t": "Review", "p3.d": "You try it on your phone. We change what you want.",
+  "p4.when": "Week 3", "p4.t": "Launch", "p4.d": "Your site goes live on your own domain, connected to Google.",
+  "templates.title": "A template for every trade.", "templates.text": "Every business gets its own look, photos and copy, made for the work it does.",
+  "tpl.want": "I want one like this",
+  "packages.title": "Simple packages, no surprises.", "pk.includes": "Includes", "pk.starter": "Starter", "pk.business": "Business",
+  "pk.popular": "Most popular", "pk.custom": "Custom", "pk.pages": "Pages", "pk.pages1": "1 page", "pk.pages2": "Up to 5",
+  "pk.pages3": "As needed", "pk.base": "Design, mobile and Google setup", "pk.form": "Contact form", "pk.booking": "Online booking", "pk.price": "Price",
+  "contact.title": "Let's talk about your website.",
+  "contact.text": "Book a free, no-obligation call. You talk directly to the two people who build your site.",
+  "contact.role": "Co-founder", "contact.email": "Email", "contact.phone": "Phone", "contact.close": "Close",
+};
+const STRIP = {
+  bs: ["Pekare", "Stomatološke ordinacije", "Berbernice", "Restorani", "Advokatske kancelarije", "Auto servisi", "Saloni ljepote", "Kafići", "Teretane", "Vodoinstalateri"],
+  en: ["Bakeries", "Dental clinics", "Barbershops", "Restaurants", "Law offices", "Auto repair", "Salons", "Cafés", "Gyms", "Plumbers"],
+};
+const TPL_WANT_BS = "Želim ovakvu";
+const palettes = {
+  plumber: { accent: "#1E3A5F", r: "6px" },
+  food:    { accent: "#6B2A1E", r: "2px" },
+  salon:   { accent: "#2B2B2B", r: "999px" },
+  auto:    { accent: "#1F2A33", r: "0" },
+};
+const PHOTOS = {
+  plumber: "https://d8j0ntlcm91z4.cloudfront.net/user_3LNO8MYCGwV2Xg4jT3FOoVDJfQr/hf_20261029_163319_7e7011e1-3251-4e8b-9475-fedfdaf3c2e6_min.webp",
+  food:    "https://d8j0ntlcm91z4.cloudfront.net/user_3LNO8MYCGwV2Xg4jT3FOoVDJfQr/hf_20261029_163319_c885bb08-f8c8-40fc-b399-4a695c2e5e26_min.webp",
+  salon:   "https://d8j0ntlcm91z4.cloudfront.net/user_3LNO8MYCGwV2Xg4jT3FOoVDJfQr/hf_20261029_163318_639bb501-51be-43f0-8c7a-cb77c26968fb_min.webp",
+  auto:    "https://d8j0ntlcm91z4.cloudfront.net/user_3LNO8MYCGwV2Xg4jT3FOoVDJfQr/hf_20261029_163319_46d0429b-a9ed-449d-a695-b0c1d200f448_min.webp",
+};
+const PHOTO_PARAMS = "";
+const kinds = {
+  plumber: {
+    bs: { label: "Vodoinstalater", head: "Curi? Začepljeno? Stižemo odmah.", text: "Vodoinstalaterski radovi za stanove, kuće i firme. Dolazak isti dan u cijelom gradu.", btn: "Pozovite odmah", facts: [["Hitne intervencije", "0–24h"], ["Dolazak", "Za manje od sat"]] },
+    en: { label: "Plumber", head: "Leak? Clog? We're on the way.", text: "Plumbing for homes and businesses. Same-day visits across town.", btn: "Call now", facts: [["Emergency", "24/7"], ["Arrival", "Under 1 hour"]] },
+  },
+  food: {
+    bs: { label: "Restoran", head: "Sezonska hrana, domaće pripreme.", text: "Ručak i večera od lokalnih namirnica. Rezervišite sto ili naručite za ponijeti.", btn: "Rezervišite sto", facts: [["Radno vrijeme", "Uto–ned, 12 do 22h"], ["Mjesta", "Unutra i na terasi"]] },
+    en: { label: "Restaurant", head: "Seasonal food, made in house.", text: "Lunch and dinner from local ingredients. Reserve a table or order for pickup.", btn: "Reserve a table", facts: [["Hours", "Tue to Sun, 12pm to 10pm"], ["Seats", "Indoor and terrace"]] },
+  },
+  salon: {
+    bs: { label: "Frizerski salon", head: "Frizura i ljepota, kako treba.", text: "Šišanje, farbanje i tretmani kod iskusnih frizera. Rezervišite online za minut.", btn: "Rezervišite online", facts: [["Radno vrijeme", "Uto–sub, 9 do 19h"], ["Bez najave", "Kad ima mjesta"]] },
+    en: { label: "Hair salon", head: "Hair and beauty, done right.", text: "Cuts, colour and treatments by experienced stylists. Book online in a minute.", btn: "Book online", facts: [["Hours", "Tue to Sat, 9am to 7pm"], ["Walk-ins", "When available"]] },
+  },
+  auto: {
+    bs: { label: "Auto servis", head: "Pošteni popravci, na vrijeme.", text: "Servis i popravke za sve marke. Javimo vam cijenu prije nego što počnemo.", btn: "Zakažite servis", facts: [["Radno vrijeme", "Pon–sub, 7 do 17h"], ["Rok", "Većina poslova isti dan"]] },
+    en: { label: "Auto repair", head: "Honest repairs, on time.", text: "Servicing and repairs for all makes. We call with a price before we start.", btn: "Book a service", facts: [["Hours", "Mon to Sat, 7am to 5pm"], ["Turnaround", "Most jobs same day"]] },
+  },
+};
+const $ = id => document.getElementById(id);
+const calm = matchMedia("(prefers-reduced-motion: reduce)").matches;
+let lang = "bs";
+
+const BS = { "tpl.want": TPL_WANT_BS };
+document.querySelectorAll("[data-i18n]").forEach(el => { BS[el.dataset.i18n] = el.textContent; });
+document.querySelectorAll("[data-i18n-aria]").forEach(el => { BS[el.dataset.i18nAria] = el.getAttribute("aria-label"); });
+
+function renderStrip() {
+  const words = STRIP[lang];
+  $("strip").replaceChildren(...[...words, ...words].map(w => {
+    const s = document.createElement("span");
+    s.textContent = w;
+    return s;
+  }));
+}
+
+for (const key of Object.keys(kinds)) {
+  const p = palettes[key];
+  const card = document.createElement("article");
+  card.className = "tpl box";
+  card.dataset.kind = key;
+  card.innerHTML = `<div class="tpl-shot"><img src="${PHOTOS[key]}${PHOTO_PARAMS}" alt="" loading="lazy" decoding="async" width="1168" height="880">`
+    + `<div class="tpl-nav"><span></span><i></i></div>`
+    + `<div class="tpl-glass"><h3 class="tpl-head"></h3><p class="tpl-text"></p><span class="tpl-btn"></span><div class="tpl-facts"></div></div></div>`
+    + `<a class="tpl-name" href="#contact"><span></span><span aria-hidden="true">→</span></a>`;
+  card.querySelector(".tpl-shot").style.cssText = `--m-accent: ${p.accent}; --m-r: ${p.r}`;
+  $("tpls").append(card);
+}
+
+function renderTemplates() {
+  const want = (lang === "en" ? EN : BS)["tpl.want"];
+  document.querySelectorAll(".tpl").forEach(c => {
+    const t = kinds[c.dataset.kind][lang];
+    c.querySelector(".tpl-nav span").textContent = t.label;
+    c.querySelector(".tpl-head").textContent = t.head;
+    c.querySelector(".tpl-text").textContent = t.text;
+    c.querySelector(".tpl-btn").textContent = t.btn;
+    c.querySelector(".tpl-facts").replaceChildren(...t.facts.map(([k, v]) => {
+      const s = document.createElement("span");
+      const b = document.createElement("b");
+      b.textContent = k;
+      s.append(b, " " + v);
+      return s;
+    }));
+    c.querySelector(".tpl-name span").textContent = `${want}: ${t.label}`;
+  });
+}
+
+function setLang(next) {
+  lang = next;
+  const dict = lang === "en" ? EN : BS;
+  document.documentElement.lang = lang;
+  document.querySelectorAll("[data-i18n]").forEach(el => { el.textContent = dict[el.dataset.i18n]; });
+  document.querySelectorAll("[data-i18n-aria]").forEach(el => el.setAttribute("aria-label", dict[el.dataset.i18nAria]));
+  document.querySelectorAll(".lang button").forEach(b => b.setAttribute("aria-pressed", b.dataset.lang === lang));
+  renderStrip();
+  renderTemplates();
+  try { localStorage.setItem("lang", lang); } catch (err) { }
+}
+
+document.querySelectorAll(".lang button").forEach(b => b.addEventListener("click", () => setLang(b.dataset.lang)));
+let saved = null;
+try { saved = localStorage.getItem("lang"); } catch (err) { }
+setLang(saved === "en" ? "en" : "bs");
+
+if ("IntersectionObserver" in window) {
+  document.documentElement.classList.add("js");
+  const io = new IntersectionObserver(entries => entries.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add("seen"); io.unobserve(e.target); }
+  }), { threshold: 0.2 });
+  document.querySelectorAll(".box, h2").forEach(el => io.observe(el));
+}
+
+(() => {
+  const root = document.querySelector(".scrubbg");
+  const video = root.querySelector("video");
+  const IDLE_RATE = 0.3, MAX_RATE = 2.5, SPEED_PX = 10, EASE = 0.12, RATE_STEP = 0.01;
+  const PARALLAX_VH = 6;
+  let rate = IDLE_RATE, lastY = scrollY, running = false;
+
+  const progress = () => {
+    const max = document.documentElement.scrollHeight - innerHeight;
+    return max > 0 ? Math.min(1, Math.max(0, scrollY / max)) : 0;
+  };
+  const place = () => { video.style.transform = `translate3d(0, ${-progress() * PARALLAX_VH}vh, 0) scale(1.15)`; };
+
+  function tick() {
+    const y = scrollY, speed = Math.abs(y - lastY);
+    lastY = y;
+    const want = Math.min(MAX_RATE, IDLE_RATE + speed / SPEED_PX);
+    rate += (want - rate) * EASE;
+    if (Math.abs(video.playbackRate - rate) > RATE_STEP) video.playbackRate = rate;
+    place();
+    if (speed === 0 && Math.abs(rate - IDLE_RATE) < RATE_STEP) {
+      rate = video.playbackRate = IDLE_RATE;
+      running = false;
+      return;
+    }
+    requestAnimationFrame(tick);
+  }
+  function kick() {
+    if (calm || running) return;
+    running = true;
+    lastY = scrollY;
+    requestAnimationFrame(tick);
+  }
+
+  place();
+  video.addEventListener("loadeddata", () => root.classList.add("has-video"), { once: true });
+  if (!calm) {
+    video.playbackRate = IDLE_RATE;
+    video.play().catch(err => console.warn("Background video could not autoplay.", err));
+  }
+  addEventListener("scroll", kick, { passive: true });
+  addEventListener("resize", place);
+})();
+
+const contact = $("contact");
+document.addEventListener("click", e => {
+  if (!(e.target.closest && e.target.closest('a[href="#contact"]'))) return;
+  e.preventDefault();
+  if (!contact.open) contact.showModal();
+});
+contact.querySelector(".modal-close").addEventListener("click", () => contact.close());
+contact.addEventListener("click", e => {
+  const r = contact.getBoundingClientRect();
+  if (e.clientX < r.left || e.clientX > r.right || e.clientY < r.top || e.clientY > r.bottom) contact.close();
+});
+if (location.hash === "#contact") contact.showModal();
+
+const bar = $("progress");
+addEventListener("scroll", () => requestAnimationFrame(() => {
+  const max = document.documentElement.scrollHeight - innerHeight;
+  bar.style.transform = `scaleX(${max > 0 ? scrollY / max : 0})`;
+}), { passive: true });
+document.addEventListener("pointermove", e => {
+  const box = e.target.closest && e.target.closest(".box");
+  if (!box) return;
+  const r = box.getBoundingClientRect();
+  box.style.setProperty("--mx", e.clientX - r.left + "px");
+  box.style.setProperty("--my", e.clientY - r.top + "px");
+});
+
+if (!calm) {
+  const words = [...$("rotor").children];
+  let i = 0;
+  setInterval(() => {
+    const cur = words[i];
+    i = (i + 1) % words.length;
+    cur.classList.add("out"); cur.classList.remove("on");
+    words[i].classList.remove("out"); words[i].classList.add("on");
+    setTimeout(() => cur.classList.remove("out"), 500);
+  }, 2200);
+}
+</script>
+</body>
+</html>
